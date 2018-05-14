@@ -18,14 +18,14 @@ public:
 		return _distance/_time;
 	}
 private:
-	double _time;//时间
-	double _distance;//距离
+	double _time;     //时间
+	double _distance; //距离
 };
 void main()
 {
-	speed peop1(1.5,5000);//花1.5小时跑了5千米
-	speed peop2(1,3000);//花了1小时跑了3千米
-	if(peop1.cal_speed()>peop2.cal_speed())//如果1大于2
+	speed peop1(1.5,5000);                      //花1.5小时跑了5千米
+	speed peop2(1,3000);                        //花了1小时跑了3千米
+	if(peop1.cal_speed()>peop2.cal_speed())     //如果1大于2
 		cout<<"第一个人比第二个人跑得快"<<endl;
 	else if(peop1.cal_speed()<peop2.cal_speed())//如果2大于1
 		cout<<"第二个人比第一个人跑得快"<<endl;
