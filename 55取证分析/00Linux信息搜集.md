@@ -55,6 +55,7 @@ grep “0” /etc/passwd > etc_passwd_new_user.txt
 awk -F: 'length($2)==0 {print $1}' /etc/shadow > etc_shadow_no_password_user.txt
 
 #process check  4
+
 # # 全格式显示所有进程
 ps -elf > ps_elf.txt
 # # 显示所有进程，包括其他用户 
@@ -63,6 +64,7 @@ ps -ef | grep inted  >  ps_inted.txt
 ls /proc |sort -n|uniq > proc.txt
 
 #file check 11
+
 # # 根据uid、执行权限来查找
 find / -uid 0 -perm -4000 > uid0_perm4000.txt
 # # 根据文件大小
@@ -80,6 +82,7 @@ find / -name ".forward" > forward.txt
 lsof > lsof.txt
 
 #integrity check 5
+
 # # 查询指定文件来自于哪个安装包
 rpm -qf /bin/ls > rpm_ls.txt
 rpm -Vf /bin/ls >> rpm_ls.txt
@@ -94,6 +97,7 @@ rpm -Vf /usr/bin/top >> rpm_top.txt
 
 
 #network check 6
+
 # # 查看路由表条目
 ip link | grep PROMISC > ip_promisc.txt
 # # 显示所有联网文件
@@ -108,6 +112,7 @@ arp -a > arp_a.txt
 ifconfig -a > ifconfig_a.txt
 
 #schedule check 5
+
 # # 显示root的crontab文件内容
 crontab -l -u root > root_crontab.txt
 crontab -l -u coremail > coremail_crontab.txt
@@ -119,6 +124,7 @@ ls /etc/cron.* -a > etc_cron.txt
 ls /var/spool/cron/ -a > var_spool_cron.txt
 
 #rc check 4
+
 # # 启动项顺序
 cat /etc/rc.d/rc.local > rc_local.txt
 # # 该目录下存在各个运行级别的脚本文件
@@ -128,6 +134,7 @@ ls /etc/rc*.d -a > rcV_d.txt
 find / -type f -perm 4000 > type_f_perm_4000.txt
 
 #log check 11
+
 # # 日志进程
 ps -ef | grep syslog > syslog.txt
 # # 列出日志目录
@@ -147,21 +154,25 @@ cat ~/.bash_history > history.txt
 ls -l ~/.bash_history > bash_history.txt
 
 #inetd sheck 1
+
 # # 扩展互联网服务守护进程配置
 cat /etc/xinetd.conf > xinetd_config.txt
 
 #kernel check 2
+
 # # 加载的模块信息
 lsmod > lsmod.txt
 find / -name core -exec ls -l {} \; > core_file.txt
 
 #service check 2
+
 # # 查看开机启动服务
 chkconfig --list > chkconfig_lists.txt
 # # 查看本地rpc进程
 rpcinfo -p > rpcinfo.txt
 
 #files get 5
+
 # # 打包守护进程文件
 tar -zcvf xinetd.tar.gz /etc/xinetd.d/*
 # # 打包日志文件
