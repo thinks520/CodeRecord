@@ -4,7 +4,7 @@
 - volatility 内存分析工具
 
 ## 2、机器信息收集
-
+```
 #sysinfo  16
 
 # # 查看当前登录用户
@@ -171,4 +171,4 @@ tar -zcvf rcd.tar.gz /etc/rc.d/*
 # # 打包计划任务
 tar -zcvf cron.tar.gz /etc/cron.*
 tar -zcvf at.tar.gz /var/spool/at/* 
-
+```
