@@ -117,11 +117,19 @@ struct USER_INFO {
 	wchar_t  username[30];
 }user_info[100];
 
+// 1-1 当前用户值的索引
+int g_user_info_flag;
+
+
 // 2-存储可使用的终端会话凭据文件
 struct FILE_INFO {
 	wchar_t filepath[MAX_PATH];
 	wchar_t UserGuid[40];
 }file_info[100];
+
+// 2-1 文件路径信息计数
+int g_file_info_flag;
+
 
 // 3-当前文件值的索引
 int fileinfo_flag;
@@ -133,8 +141,8 @@ wchar_t g_input[MAX_PATH];
 // 5-guidMasterKey值存储
 struct GUIDMASTERKEY {
 	wchar_t  GuidMasterKey[30];
-	wchar_t  MasterKeyData[30];
-}guidMasterKey[];
+	LPCBYTE  MasterKeyData[30];
+}guidMasterKey[100];
 
 
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mimikatz", "mimikatz\mimikatz.vcxproj", "{FB9B5E61-7C34-4280-A211-E979E1D6977F}"
 EndProject
@@ -63,10 +63,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mimidrv", "mimidrv\mimidrv.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mimilove", "mimilove\mimilove.vcxproj", "{60D02E32-1711-4D9E-9AC2-10627C52EB40}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20180205_MFC_mimikatz读取密码", "20180205_MFC_mimikatz读取密码\20180205_MFC_mimikatz读取密码.vcxproj", "{BADE8A11-8289-4B02-84E3-076DCA8A1A42}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20180208_数组字符串去重", "20180208_数组字符串去重\20180208_数组字符串去重.vcxproj", "{41808759-1F7A-4687-9611-322E65983927}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -116,30 +112,6 @@ Global
 		{60D02E32-1711-4D9E-9AC2-10627C52EB40}.Release|x64.ActiveCfg = Release|x64
 		{60D02E32-1711-4D9E-9AC2-10627C52EB40}.Second_Release_PowerShell|Win32.ActiveCfg = Release|Win32
 		{60D02E32-1711-4D9E-9AC2-10627C52EB40}.Second_Release_PowerShell|x64.ActiveCfg = Release|x64
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Debug|Win32.ActiveCfg = Debug|Win32
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Debug|Win32.Build.0 = Debug|Win32
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Debug|x64.ActiveCfg = Debug|x64
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Debug|x64.Build.0 = Debug|x64
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Release|Win32.ActiveCfg = Release|Win32
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Release|Win32.Build.0 = Release|Win32
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Release|x64.ActiveCfg = Release|x64
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Release|x64.Build.0 = Release|x64
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Second_Release_PowerShell|Win32.ActiveCfg = Release|Win32
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Second_Release_PowerShell|Win32.Build.0 = Release|Win32
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Second_Release_PowerShell|x64.ActiveCfg = Release|x64
-		{BADE8A11-8289-4B02-84E3-076DCA8A1A42}.Second_Release_PowerShell|x64.Build.0 = Release|x64
-		{41808759-1F7A-4687-9611-322E65983927}.Debug|Win32.ActiveCfg = Debug|Win32
-		{41808759-1F7A-4687-9611-322E65983927}.Debug|Win32.Build.0 = Debug|Win32
-		{41808759-1F7A-4687-9611-322E65983927}.Debug|x64.ActiveCfg = Debug|x64
-		{41808759-1F7A-4687-9611-322E65983927}.Debug|x64.Build.0 = Debug|x64
-		{41808759-1F7A-4687-9611-322E65983927}.Release|Win32.ActiveCfg = Release|Win32
-		{41808759-1F7A-4687-9611-322E65983927}.Release|Win32.Build.0 = Release|Win32
-		{41808759-1F7A-4687-9611-322E65983927}.Release|x64.ActiveCfg = Release|x64
-		{41808759-1F7A-4687-9611-322E65983927}.Release|x64.Build.0 = Release|x64
-		{41808759-1F7A-4687-9611-322E65983927}.Second_Release_PowerShell|Win32.ActiveCfg = Release|Win32
-		{41808759-1F7A-4687-9611-322E65983927}.Second_Release_PowerShell|Win32.Build.0 = Release|Win32
-		{41808759-1F7A-4687-9611-322E65983927}.Second_Release_PowerShell|x64.ActiveCfg = Release|x64
-		{41808759-1F7A-4687-9611-322E65983927}.Second_Release_PowerShell|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

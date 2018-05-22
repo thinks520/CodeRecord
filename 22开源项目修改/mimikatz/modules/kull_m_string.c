@@ -133,6 +133,35 @@ PCWCHAR WPRINTF_TYPES[] =
 	L"\\x%02x",		// WPRINTF_HEX_PYTHON
 };
 
+
+
+//=========================char转hex函数
+//void LPCBYTEAsHex(LPCBYTE buff)
+//{
+//	int count = 0;
+//	char buffer[16];                 //临时存放字符的数组
+//
+//	while (1)
+//	{
+//
+//		buffer[count] = buff;          //将文件字符存储到数组中
+//		count++;                          //计算每个字符的数目
+//
+//		if (count >= 16)                   //提前处理前16个字节
+//		{
+//			writeLine(buffer, 16);
+//			count = 0;
+//		}
+//	}
+//
+//	if (count > 0)                           //不满16字节的情况处理
+//	{
+//		writeLine(buffer, count);
+//	}
+//
+//}
+//=========================
+
 void kull_m_string_wprintf_hex(LPCVOID lpData, DWORD cbData, DWORD flags)
 {
 	DWORD i, sep = flags >> 16;
@@ -144,6 +173,8 @@ void kull_m_string_wprintf_hex(LPCVOID lpData, DWORD cbData, DWORD flags)
 	for(i = 0; i < cbData; i++)
 	{
 		kprintf(pType, ((LPCBYTE) lpData)[i]); //获取masterKey
+		//wcscpy_s(guidMasterKey[0].MasterKeyData, _countof(guidMasterKey[0].MasterKeyData), ((LPCBYTE)lpData)[i]);
+
 		if(sep && !((i+1) % sep))
 		{
 			kprintf(L"\n");
@@ -193,6 +224,10 @@ BOOL kull_m_string_FileTimeToString(IN PFILETIME pFileTime, OUT WCHAR string[14 
 					status = GetTimeFormat(LOCALE_USER_DEFAULT, 0, &st, L"HHmmss", string + 8, 6 + 1);
 	return status;
 }
+
+
+
+
 
 void kull_m_string_displayGUID(IN LPCGUID pGuid)
 {

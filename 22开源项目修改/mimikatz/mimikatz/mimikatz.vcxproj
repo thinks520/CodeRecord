@@ -30,18 +30,19 @@
     </SccLocalPath>
     <SccProvider>
     </SccProvider>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <ConfigurationType Condition="'$(Configuration)' != 'Second_Release_PowerShell'">Application</ConfigurationType>
-    <ConfigurationType Condition="'$(Configuration)' == 'Second_Release_PowerShell'">DynamicLibrary</ConfigurationType>
+    <ConfigurationType Condition="'$(Configuration)' == 'Second_Release_PowerShell'">Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v100</PlatformToolset>
     <PlatformToolset Condition="'$(VCTargetsPath11)' != ''">v110_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VCTargetsPath12)' != ''">v120_xp</PlatformToolset>
-    <PlatformToolset Condition="'$(VCTargetsPath14)' != ''">v140_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VCTargetsPath14)' != ''">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VCTargetsPath15)' != ''">v141_xp</PlatformToolset>
     <UseOfMfc>static</UseOfMfc>
   </PropertyGroup>
@@ -56,7 +57,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)inc;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)lib\$(Platform);$(LibraryPath)</LibraryPath>
-    <TargetName Condition="'$(Configuration)' == 'Second_Release_PowerShell'">powerkatz</TargetName>
+    <TargetName Condition="'$(Configuration)' == 'Second_Release_PowerShell'">mimikatz</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <EmbedManifest>false</EmbedManifest>
@@ -98,6 +99,8 @@
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <UACExecutionLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RequireAdministrator</UACExecutionLevel>
       <UACExecutionLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RequireAdministrator</UACExecutionLevel>
+      <UACExecutionLevel Condition="'$(Configuration)|$(Platform)'=='Second_Release_PowerShell|Win32'">RequireAdministrator</UACExecutionLevel>
+      <UACExecutionLevel Condition="'$(Configuration)|$(Platform)'=='Second_Release_PowerShell|x64'">RequireAdministrator</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

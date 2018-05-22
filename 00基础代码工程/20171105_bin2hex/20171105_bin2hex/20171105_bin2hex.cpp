@@ -82,6 +82,8 @@ void printFileAsHex(FILE* file)
 	}
 }
 
+
+// 打印PE可以打印的字符
 char toVisibleCharacter(int byteVal)
 {
 	if (byteVal >= 32 && byteVal <= 126)  // 输出可打印字符
@@ -92,6 +94,8 @@ char toVisibleCharacter(int byteVal)
 	return '_';                           //不可打印就输出_号
 }
 
+
+// 主要转换函数，写文件，打印PE中的字符
 void writeLine(char* lineBuffer, int buflen)
 {
 	int i;
@@ -99,20 +103,28 @@ void writeLine(char* lineBuffer, int buflen)
 	char str[LINELEN];
 
 	// 读写文件
-	FILE* file = fopen("D:\\20171111-test.txt", "a+");
+	FILE* file = fopen("D:\\20171111-test_bin2hex.txt", "a+");
 
+	// 16进制输出，每16行切换一次
 	for (i = 0; i < buflen; i++)
 	{
+
+		// 主要转换十六进制函数
 		char chu = upperToHex(lineBuffer[i]); //取高4位  -->处理成十进制的值
 		char chl = lowerToHex(lineBuffer[i]); //取低4位  -->处理成十进制的值
 		printf("%c%c ", chu, chl);
 		//自增加的-写文件到txt
 		sprintf(str, "%c%c", chu, chl);
+
+
+		// 写文件函数
 		fseek(file, 0, SEEK_END);
 		fwrite(str, strlen(str), 1, file);
 	}
 	fclose(file);
 
+
+	// 打印中间的空格
 	if (buflen < LINELEN)
 	{
 		for (i = LINELEN - buflen; i > 0; i--)
@@ -120,18 +132,18 @@ void writeLine(char* lineBuffer, int buflen)
 			printf("   ");
 		}
 	}
-
 	printf("\t");
 
 
 
+	//输出PE中可以打印的字符，16行切换一次
 	char str1[LINELEN];
 	for (i = 0; i < buflen; i++)
 	{
 		char ch = toVisibleCharacter(lineBuffer[i]);
 		printf("%c", ch);
 	}
-
+	// 回车换行
 	printf(CRLF);
 }
 
