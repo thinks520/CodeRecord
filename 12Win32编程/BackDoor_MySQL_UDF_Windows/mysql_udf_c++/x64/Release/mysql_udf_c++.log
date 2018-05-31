@@ -1,0 +1,37 @@
+﻿生成启动时间为 2018/05/31 9:45:43。
+     1>项目“C:\ProjectCode\C++Code\C++_Mysql开发\mysql_udf_c++\mysql_udf_c++.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _WINDOWS /D _USRDLL /D MYSQL_UDF_C_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS- /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt udf_demo.cpp
+     1>cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+         udf_demo.cpp
+     1>udf_demo.cpp(26): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+     1>udf_demo.cpp(64): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+     1>udf_demo.cpp(66): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+     1>udf_demo.cpp(80): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+     1>udf_demo.cpp(82): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+     1>udf_demo.cpp(86): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+     1>udf_demo.cpp(88): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+     1>udf_demo.cpp(113): warning C4267: “=”: 从“size_t”转换到“unsigned long”，可能丢失数据
+     1>udf_demo.cpp(53): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1769): note: 参见“sprintf”的声明
+     1>udf_demo.cpp(73): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1769): note: 参见“sprintf”的声明
+     1>udf_demo.cpp(98): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1769): note: 参见“sprintf”的声明
+     1>udf_demo.cpp(111): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1769): note: 参见“sprintf”的声明
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\ProjectCode\C++Code\C++_Mysql开发\x64\Release\mysql_udf_c++.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\ProjectCode\C++Code\C++_Mysql开发\x64\Release\mysql_udf_c++.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\ProjectCode\C++Code\C++_Mysql开发\x64\Release\mysql_udf_c++.lib" /MACHINE:X64 /DLL x64\Release\udf_demo.obj
+           正在创建库 C:\ProjectCode\C++Code\C++_Mysql开发\x64\Release\mysql_udf_c++.lib 和对象 C:\ProjectCode\C++Code\C++_Mysql开发\x64\Release\mysql_udf_c++.exp
+         正在生成代码
+         8 of 8 functions (100.0%) were compiled, the rest were copied from previous compilation.
+           8 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         已完成代码的生成
+         mysql_udf_c++.vcxproj -> C:\ProjectCode\C++Code\C++_Mysql开发\x64\Release\mysql_udf_c++.dll
+     1>已完成生成项目“C:\ProjectCode\C++Code\C++_Mysql开发\mysql_udf_c++\mysql_udf_c++.vcxproj”(Rebuild 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:02.47
