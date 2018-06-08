@@ -38,23 +38,21 @@ def check(one_list):
 
 if __name__ == '__main__':
     read_file()
-    # regex = r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)"
+    regex = r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)"
     # 这个正则表达式过滤掉了qq邮箱
-    regex = r"([a-zA-Z0-9_.+-]+@[a-pr-zA-PRZ0-9-]+\.[a-zA-Z0-9-.]+)"
+    # regex = r"([a-zA-Z0-9_.+-]+@[a-pr-zA-PRZ0-9-]+\.[a-zA-Z0-9-.]+)"
 
     for target_value in target:
         # print(html)
         raw_data = re.findall(regex, target_value)
         for raw_data_value in raw_data:
             repeat.append(raw_data_value)
-
     # 去重复
     emails = check(repeat)
     #输出邮件
     i = 0
-    with open(os.getcwd() + "\\output.txt", 'wb') as f:  # exl是二进制数据
+    with open(os.getcwd() + "\\output.txt", 'wb') as f:  
         for email in emails:
             i += 1
             print("{} :{}".format(i, email))
             f.write(email + "\n")
-        #print("{}".format(email))
