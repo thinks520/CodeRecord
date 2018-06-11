@@ -1,31 +1,31 @@
 
-// MFCÅäÖÃ¶ËDlg.h : Í·ÎÄ¼ş
+// MFCé…ç½®ç«¯Dlg.h : å¤´æ–‡ä»¶
 //
 
 #pragma once
 
 
-// CMFCÅäÖÃ¶ËDlg ¶Ô»°¿ò
-class CMFCÅäÖÃ¶ËDlg : public CDialogEx
+// CMFCé…ç½®ç«¯Dlg å¯¹è¯æ¡†
+class CMFCé…ç½®ç«¯Dlg : public CDialogEx
 {
-// ¹¹Ôì
+// æ„é€ 
 public:
-	CMFCÅäÖÃ¶ËDlg(CWnd* pParent = NULL);	// ±ê×¼¹¹Ôìº¯Êı
+	CMFCé…ç½®ç«¯Dlg(CWnd* pParent = NULL);	// æ ‡å‡†æ„é€ å‡½æ•°
 
-// ¶Ô»°¿òÊı¾İ
+// å¯¹è¯æ¡†æ•°æ®
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_MFC_DIALOG };
 #endif
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV Ö§³Ö
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV æ”¯æŒ
 
 
-// ÊµÏÖ
+// å®ç°
 protected:
 	HICON m_hIcon;
 
-	// Éú³ÉµÄÏûÏ¢Ó³Éäº¯Êı
+	// ç”Ÿæˆçš„æ¶ˆæ¯æ˜ å°„å‡½æ•°
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
@@ -40,9 +40,9 @@ public:
 	CString m_szOtherStr;
 	afx_msg void OnBnChangeResource();
 
-	// ĞŞ¸ÄPEµÄÎÄ¼ş
+	// ä¿®æ”¹PEçš„æ–‡ä»¶
 	CString strPath, strEXE, strResult;
-	// Éú³É×´Ì¬Ê¶±ğ
+	// ç”ŸæˆçŠ¶æ€è¯†åˆ«
     // 1 exe
 	// 2 dll
 	int BuildFlag;

@@ -1,32 +1,32 @@
 
-// MFCÅäÖÃ¶Ë.h : PROJECT_NAME Ó¦ÓÃ³ÌĞòµÄÖ÷Í·ÎÄ¼ş
+// MFCé…ç½®ç«¯.h : PROJECT_NAME åº”ç”¨ç¨‹åºçš„ä¸»å¤´æ–‡ä»¶
 //
 
 #pragma once
 
 #ifndef __AFXWIN_H__
-	#error "ÔÚ°üº¬´ËÎÄ¼şÖ®Ç°°üº¬¡°stdafx.h¡±ÒÔÉú³É PCH ÎÄ¼ş"
+	#error "åœ¨åŒ…å«æ­¤æ–‡ä»¶ä¹‹å‰åŒ…å«â€œstdafx.hâ€ä»¥ç”Ÿæˆ PCH æ–‡ä»¶"
 #endif
 
-#include "resource.h"		// Ö÷·ûºÅ
+#include "resource.h"		// ä¸»ç¬¦å·
 
 
-// CMFCÅäÖÃ¶ËApp: 
-// ÓĞ¹Ø´ËÀàµÄÊµÏÖ£¬Çë²ÎÔÄ MFCÅäÖÃ¶Ë.cpp
+// CMFCé…ç½®ç«¯App: 
+// æœ‰å…³æ­¤ç±»çš„å®ç°ï¼Œè¯·å‚é˜… MFCé…ç½®ç«¯.cpp
 //
 
-class CMFCÅäÖÃ¶ËApp : public CWinApp
+class CMFCé…ç½®ç«¯App : public CWinApp
 {
 public:
-	CMFCÅäÖÃ¶ËApp();
+	CMFCé…ç½®ç«¯App();
 
-// ÖØĞ´
+// é‡å†™
 public:
 	virtual BOOL InitInstance();
 
-// ÊµÏÖ
+// å®ç°
 
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CMFCÅäÖÃ¶ËApp theApp;
+extern CMFCé…ç½®ç«¯App theApp;
