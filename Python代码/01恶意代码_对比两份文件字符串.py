@@ -37,7 +37,7 @@ if __name__ == '__main__':
     print ("output diff_rule.txt -> 不同的数据").decode('UTF-8')
 
     # 判断文件路径是否存在，如果不存在直接退出，否则读取文件内容
-    if (not os.path.exists(os.getcwd()+"\\target.txt")) or (not os.path.exists(os.getcwd()+"\\raw_data_Execute_File_Hash.lst")):
+    if (not os.path.exists(os.getcwd()+"\\target.txt")) or (not os.path.exists(os.getcwd()+"\\raw_data.txt")):
         print 'Please confirm correct filepath !'
         sys.exit(0)
     else:
