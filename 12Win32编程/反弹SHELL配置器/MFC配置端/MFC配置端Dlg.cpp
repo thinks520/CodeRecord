@@ -329,6 +329,7 @@ BOOL CMFC配置端Dlg::PreTranslateMessage(MSG* pMsg)
 }
 
 
+// 生成x86 EXE
 void CMFC配置端Dlg::OnBnChangeResource()
 {
 	// TODO: 在此添加控件通知处理程序代码
@@ -397,10 +398,9 @@ void CMFC配置端Dlg::OnBnChangeResource()
 	// 修改PE函数
 	OnBnChangePE();
 
-
 }
 
-
+// 生成x86 DLL
 void CMFC配置端Dlg::OnBuild_DLL()
 {
 	// TODO: 在此添加控件通知处理程序代码
@@ -469,7 +469,7 @@ void CMFC配置端Dlg::OnBuild_DLL()
 	OnBnChangePE();
 }
 
-
+// 生成x64 EXE
 void CMFC配置端Dlg::Builx64EXE()
 {
 	// TODO: 在此添加控件通知处理程序代码
@@ -539,7 +539,7 @@ void CMFC配置端Dlg::Builx64EXE()
 	OnBnChangePE();
 }
 
-
+// 生成x64 DLL
 void CMFC配置端Dlg::Builx64DLL()
 {
 	// TODO: 在此添加控件通知处理程序代码

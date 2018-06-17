@@ -192,28 +192,28 @@ END
 // EXE
 //
 
-IDR_EXE1                EXE                     "C:\\ProjectCode\\C++Code\\服务配置器\\Release\\URL配置器_EXE.exe"
+IDR_EXE1                EXE                     "..\\Release\\URL配置器_EXE.exe"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // DLL
 //
 
-IDR_DLL1                DLL                     "C:\\ProjectCode\\C++Code\\服务配置器\\Release\\URL配置器_DLL.dll"
+IDR_DLL1                DLL                     "..\\Release\\URL配置器_DLL.dll"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // X64_EXE
 //
 
-IDR_X64_EXE1            X64_EXE                 "C:\\ProjectCode\\C++Code\\服务配置器\\x64\\Release\\URL配置器_EXE.exe"
+IDR_X64_EXE1            X64_EXE                 "..\\x64\\Release\\URL配置器_EXE.exe"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // X64_DLL
 //
 
-IDR_X64_DLL1            X64_DLL                 "C:\\ProjectCode\\C++Code\\服务配置器\\x64\\Release\\URL配置器_DLL.dll"
+IDR_X64_DLL1            X64_DLL                 "..\\x64\\Release\\URL配置器_DLL.dll"
 
 /////////////////////////////////////////////////////////////////////////////
 //
