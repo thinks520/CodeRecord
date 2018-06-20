@@ -1,4 +1,4 @@
-// 20171102-±éÀú½ø³Ì.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// 20171102-éå†è¿›ç¨‹.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -8,25 +8,25 @@
 #include <tlhelp32.h>
 
 
-//±¾³ÌĞòÑİÊ¾CreateToolhelp32Snapshot Process32First Process32Next
+//æœ¬ç¨‹åºæ¼”ç¤ºCreateToolhelp32Snapshot Process32First Process32Next
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	setlocale(LC_ALL, "chs");//ÖÃ±¾µØÓïÑÔ»·¾³
-	PROCESSENTRY32 pe32;//½ø³Ì½áĞÅÏ¢½á¹¹Ìå
+	setlocale(LC_ALL, "chs");//ç½®æœ¬åœ°è¯­è¨€ç¯å¢ƒ
+	PROCESSENTRY32 pe32;//è¿›ç¨‹ç»“ä¿¡æ¯ç»“æ„ä½“
 	pe32.dwSize = sizeof(pe32);
 	HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPALL, 0);
 	if (hProcessSnap == INVALID_HANDLE_VALUE)
 	{
-		wprintf_s(L"CreateToolhelp32Snapshot µ÷ÓÃÊ§°Ü.\n");
+		wprintf_s(L"CreateToolhelp32Snapshot è°ƒç”¨å¤±è´¥.\n");
 		return -1;
 	}
 	BOOL bMore = Process32First(hProcessSnap, &pe32);
 	while (bMore)
 	{
-		wprintf_s(L"½ø³ÌÃû³Æ£º%s\n", pe32.szExeFile);
-		wprintf_s(L"½ø³ÌID£º%u\n\n", pe32.th32ProcessID);
+		wprintf_s(L"è¿›ç¨‹åç§°ï¼š%s\n", pe32.szExeFile);
+		wprintf_s(L"è¿›ç¨‹IDï¼š%u\n\n", pe32.th32ProcessID);
 		bMore = Process32Next(hProcessSnap, &pe32);
 	}
 	CloseHandle(hProcessSnap);
