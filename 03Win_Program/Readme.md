@@ -186,9 +186,9 @@ Windows套接字的工作模式有两种，分别为阻塞模式（同步模式�
 
 - SetFileAttributes()：设置文件属性
 
-### 示例：模拟U盘病毒
+### 5.1.1 示例：模拟U盘病毒
 
-- 思路
+- 编程思路
 
   1、设定autorun.inf的内容
 
@@ -209,8 +209,17 @@ Windows套接字的工作模式有两种，分别为阻塞模式（同步模式�
   - 建立Autorun.inf文件
   - 设置Autorun.inf文件属性为隐藏属性
 
-### 示例：免疫U盘病毒
+- 代码路径
 
+https://github.com/zprogram/CodeRecord/blob/master/03Win_Program/Basic_Project/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C_%E6%A8%A1%E6%8B%9FU%E7%9B%98%E7%97%85%E6%AF%92.cpp
+
+### 5.1.2 示例：免疫U盘病毒
+
+- 编程思路
+
+- 代码路径
+
+https://github.com/zprogram/CodeRecord/tree/master/03Win_Program/Basic_Project/U%E7%9B%98_%E5%85%8D%E7%96%ABAutorun.inf
 
 
 ## 5.2 注册表编程
