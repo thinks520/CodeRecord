@@ -100,11 +100,11 @@ socket()->sendto()/recvfrom()->closesocket()
 
 int main()
 {
-	DWORD dwSmallNum = 0x01020304;
-	if (*(BYTE*)&dwSmallNum = 0x04) 
-	{
-		printf("small sequence");
-	}
+    DWORD dwSmallNum = 0x01020304;
+    if (*(BYTE*)&dwSmallNum = 0x04) 
+    {
+        printf("small sequence");
+    }
 
     return 0;
 }
@@ -224,8 +224,33 @@ https://github.com/zprogram/CodeRecord/tree/master/03Win_Program/Basic_Project/U
 
 ## 5.2 注册表编程
 
-- 打开和关闭注册表
-- 启动项管理
+### 5.2.1 注册表结构
+
+regedit:注册表是树状结构，由根键、子键、键项值组成。
+
+- 根键：注册表树状结构的根节点。类似磁盘驱动器的盘符：C:、D:、E:、F:
+
+  ```
+  HKEY_CLASSES_ROOT
+  HKEY_CURRENT_USER
+  HKEY_LOCAL_MACHINE
+  HKEY_USERS
+  HKEY_CURRENT_CONFIG
+  ```
+
+- - 子键：根节点下的子节点。类似磁盘驱动器的文件夹。
+
+  ```
+  HKEY_USERS\.DEFAULT
+  ```
+- - - 键项值：不包括子键的子键就是键值项，相当于树状结构中的叶子节点。
+- 注册表中的数据：根键、子键、键项都是注册表中的结构，注册表中具体的数据由3部分组成：值名称、值类型和值。也就是：名称、类型和数据。
+
+### 5.2.2 操作注册表API
+
+- RegOpenKeyEx：打开注册表句柄
+- RegOpenKey：打开注册表句柄，Win16下函数，在Win32仍然可用，但是为了兼容而设置的。
+- RegCloseKey：关闭释放注册表句柄。
 
 ## 5.3 服务编程
 
