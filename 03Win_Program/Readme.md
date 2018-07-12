@@ -211,7 +211,7 @@ Windows套接字的工作模式有两种，分别为阻塞模式（同步模式�
 
 - 代码路径
 
-https://github.com/zprogram/CodeRecord/blob/master/03Win_Program/Basic_Project/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C_%E6%A8%A1%E6%8B%9FU%E7%9B%98%E7%97%85%E6%AF%92.cpp
+[WindowsAPI_文件操作_模拟U盘病毒.cpp](https://github.com/zprogram/CodeRecord/blob/master/03Win_Program/Basic_Project/WindowsAPI_%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C_%E6%A8%A1%E6%8B%9FU%E7%9B%98%E7%97%85%E6%AF%92.cpp)
 
 ### 5.1.2 示例：免疫U盘病毒
 
@@ -219,7 +219,7 @@ https://github.com/zprogram/CodeRecord/blob/master/03Win_Program/Basic_Project/%
 
 - 代码路径
 
-https://github.com/zprogram/CodeRecord/tree/master/03Win_Program/Basic_Project/U%E7%9B%98_%E5%85%8D%E7%96%ABAutorun.inf
+[WindowsAPI_文件操作_U盘免疫_Autorun.inf](https://github.com/zprogram/CodeRecord/tree/master/03Win_Program/Basic_Project/U%E7%9B%98_%E5%85%8D%E7%96%ABAutorun.inf)
 
 
 ## 5.2 注册表编程
@@ -249,8 +249,27 @@ regedit:注册表是树状结构，由根键、子键、键项值组成。
 ### 5.2.2 操作注册表API
 
 - RegOpenKeyEx：打开注册表句柄
+
 - RegOpenKey：打开注册表句柄，Win16下函数，在Win32仍然可用，但是为了兼容而设置的。
+
 - RegCloseKey：关闭释放注册表句柄。
+
+- RegCreateKeyEx()：创建一个子健。
+
+- RegDeleteKey()：删除子健。
+
+- RegQueryValueEx()：读取键名称中的数据，查询键名称的属性。
+
+- RegDeleteValue()：删除键值项。
+
+- RegEnumKeyEx()：对指定键下面的子键进行逐一的获取。
+
+- RegEnumValue()：枚举键值。
+  
+### 5.2.3 示例：注册表下启动项的管理
+
+
+
 
 ## 5.3 服务编程
 
