@@ -14,8 +14,11 @@
 
 #### 3.1.1、C语言基础
 
+[ReadMe](https://github.com/zprogram/CodeRecord/tree/master/01C_Program)
 
 #### 3.1.2、C++基础
+
+[ReadMe](https://github.com/zprogram/CodeRecord/tree/master/02C%2B%2B_Program)
 
 
 #### 3.1.3、数据结构基础
