@@ -16,6 +16,10 @@
 
 [ReadMe](https://github.com/zprogram/CodeRecord/tree/master/01C_Program)
 
+##### 参考书籍
+
+- 
+
 #### 3.1.2、C++基础
 
 [ReadMe](https://github.com/zprogram/CodeRecord/tree/master/02C%2B%2B_Program)
@@ -144,6 +148,7 @@
 ### 4.1、LinuxC程序设计
 - Linux命令
 - VIM命令
+- shell
 - 进程间通信
 - ELF文件格式
 - Linux操作系统内核
@@ -175,7 +180,10 @@
 
 #### 4.3.4、恶意代码行为
 
-## 5.信息安全工程
+## 5、Web安全
+
+
+## 6、信息安全工程
 
 ### 5.1、法律知识
 
